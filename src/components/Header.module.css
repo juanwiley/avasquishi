@@ -1,0 +1,105 @@
+/* Bar uses the exact same background as the page */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  /* Inherit the page bg so it matches the logo strip exactly */
+  background: inherit;
+  /* …but keep a fallback if inherit isn’t available for some reason */
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+}
+
+.inner {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap; /* allows 2nd row on mobile */
+}
+
+/* Logo */
+.logoLink { display: inline-flex; align-items: center; }
+.logo { display: block; height: auto; width: 168px; }
+
+/* Main nav */
+.nav { display: flex; align-items: center; gap: 18px; }
+.navLink {
+  font-weight: 600;
+  color: #5b357a;
+  text-decoration: none;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+.navLink:hover { background: rgba(0,0,0,0.05); }
+
+/* Actions (Account / Cart) */
+.actions { display: flex; align-items: center; gap: 10px; }
+.iconButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  min-height: 40px;
+  border-radius: 10px;
+  color: #5b357a;
+  text-decoration: none;
+}
+.iconButton:hover { background: rgba(0,0,0,0.05); }
+
+.icon { width: 22px; height: 22px; }
+.navText { display: inline-block; }
+
+/* Cart badge — always visible on top-right of the icon */
+.badge {
+  position: absolute;
+  /* anchor to the top-right corner of the iconButton */
+  top: 8px;
+  right: 8px;
+  transform: translate(50%,-50%);
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 700;
+  color: #fff;
+  background: #e81f63;               /* red */
+  box-shadow: 0 0 0 2px var(--page-bg, #f4e9f7);
+  pointer-events: none;
+}
+.badgePing { animation: badge-pop 520ms ease-out; }
+@keyframes badge-pop {
+  0% { transform: translate(50%,-50%) scale(.8); opacity:.6; }
+  45% { transform: translate(50%,-50%) scale(1.12); opacity:1; }
+  100% { transform: translate(50%,-50%) scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .badgePing { animation: none; }
+}
+
+/* Mobile: keep header compact, push nav to row #2, icon-only actions */
+@media (max-width: 768px) {
+  .logo { width: 150px; }
+  .nav {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    gap: 16px;
+    padding-top: 6px;
+  }
+  .navText { display: none; }  /* actions show icons only */
+  .icon { width: 22px; height: 22px; }
+}
+
+/* Very small devices: slightly smaller logo/gaps so everything fits */
+@media (max-width: 390px) {
+  .logo { width: 140px; }
+  .inner { gap: 8px; padding: 8px 12px; }
+}
