@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+.pnpm-store/
+.pnp.*
+
+# build outputs
+.next/
+dist/
+out/
+
+# env files
+.env*
+!.env.example
+
+# system
+.DS_Store
+*.log
+.vercel
+
+.turbo/
+.aider*

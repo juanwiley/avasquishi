@@ -1,0 +1,32 @@
+.main {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--lightlavender);
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: var(--purple);
+  margin-bottom: 1rem;
+}
+
+.text {
+  color: var(--gray);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.backLink {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--pink);
+  color: white;
+  border-radius: 1.5rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.backLink:hover {
+  background-color: var(--purple);
+}

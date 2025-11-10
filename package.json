@@ -1,0 +1,33 @@
+{
+  "name": "avasquishi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Avasquishi online store built with Next.js and Stripe via WileyPay.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.75.0",
+    "next": "15.5.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "stripe": "^19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "eslint": "^9.37.0",
+    "eslint-config-next": "15.5.4"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "author": "Juan Wiley",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juanwiley/avasquishi.git"
+  }
+}

@@ -1,0 +1,152 @@
+/* Page container matches Home width */
+.main {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+.pageTitle {
+  margin: 0 0 0.75rem;
+  color: var(--purple);
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+/* Toolbar (chips + sort) */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 1rem;
+}
+
+.chips {
+  display: flex;
+  gap: .5rem;
+  overflow-x: auto;
+  padding-bottom: .25rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.chip {
+  padding: .4rem .8rem;
+  border-radius: 999px;
+  background: var(--lavender-100, #efe6f7);
+  color: var(--purple);
+  font-weight: 500;
+  white-space: nowrap;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* Sort controls */
+.sort {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: .5rem;                 /* ← gives "Sort" some space from the select */
+}
+
+.sortLabel {
+  color: var(--purple);
+  opacity: .85;
+  font-weight: 500;
+}
+
+.sortSelect {
+  padding: .45rem .65rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: white;
+  color: var(--purple);
+}
+
+.sortApply {
+  padding: .45rem .7rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: var(--lavender-100, #efe6f7);
+  color: var(--purple);
+}
+
+/* Sections */
+.section { margin: 1.25rem 0 2rem; }
+.sectionHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .75rem;
+  margin-bottom: .5rem;
+}
+.sectionTitle {
+  color: var(--purple);
+  font-size: 1.25rem;
+  margin: 0;
+}
+.viewAll {
+  color: var(--purple);
+  opacity: .85;
+  text-decoration: none;
+}
+.viewAll:hover { opacity: 1; }
+
+/* Horizontal rail container */
+.railWrap { position: relative; }
+
+/* The scroller itself */
+.rail {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 1rem;                  /* small left/right breathing room */
+  scroll-padding-left: 1rem;        /* first snap doesn’t sit under a fader */
+  scroll-padding-right: 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Edge fades (hidden until JS toggles data-at-start / data-at-end) */
+.railWrap::before,
+.railWrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 28px;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+  opacity: 0;
+}
+.railWrap::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(242, 228, 244, 1), rgba(242, 228, 244, 0));
+}
+.railWrap::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(242, 228, 244, 1), rgba(242, 228, 244, 0));
+}
+
+/* existing fader divs you already render */
+.fade {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 36px;
+  pointer-events: none;
+  background: linear-gradient(to right, var(--page-bg, #f2eafa), transparent);
+}
+.fadeLeft { left: 0; }
+.fadeRight { right: 0; transform: rotate(180deg); }
+
+.empty {
+  padding: 1rem;
+  color: var(--gray, #777);
+  background: rgba(0,0,0,0.02);
+  border-radius: 12px;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .rail { grid-auto-columns: 78vw; }
+  .toolbar { flex-wrap: wrap; }
+  .sort { width: 100%; justify-content: flex-end; }
+}
