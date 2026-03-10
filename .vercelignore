@@ -1,0 +1,14 @@
+# Ignore local-only and dependency folders
+node_modules
+.vscode
+.git
+.gitignore
+.vercel
+
+# Ignore temporary or system files
+*.log
+*.tmp
+.DS_Store
+
+# Allow all app source, public assets, and config files
+# Do not exclude src/, public/, next.config.mjs, package.json, etc.
