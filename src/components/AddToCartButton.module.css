@@ -1,0 +1,49 @@
+/* Quantity stepper — same look as the cart page's qty control */
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.qtyGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(160, 121, 255, 0.15);
+  padding: 6px 10px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* .qtyGroup .qtyBtn outranks the product page's `.ctaRow button { width: 100% }` */
+.qtyGroup .qtyBtn {
+  flex: 0 0 40px;
+  width: 40px;
+  max-width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: rgba(160, 121, 255, 0.35);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--purple);
+  cursor: pointer;
+}
+
+.qtyGroup .qtyBtn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.qtyVal {
+  min-width: 16px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--purple);
+}

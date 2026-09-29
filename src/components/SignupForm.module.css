@@ -1,0 +1,102 @@
+.box {
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr); /* don't let content widen the box on phones */
+  gap: 0.5rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.home {
+  max-width: 560px;
+  background: #fff;
+  border: 1px solid var(--lightpurple, #e5dcf5);
+  border-radius: 18px;
+  padding: 1.25rem 1.25rem 1rem;
+}
+
+.title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--purplepink);
+}
+
+.home .title {
+  font-size: 1.35rem;
+}
+
+.blurb {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #7a7690;
+}
+
+.row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.7rem 1rem;
+  font-size: 16px; /* 16px+ keeps iOS from zooming in */
+  border: 1px solid var(--lightpurple, #d8c8f0);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--purple);
+}
+
+.button {
+  padding: 0.7rem 1.4rem;
+  flex-shrink: 0;
+}
+
+.consent {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  text-align: left;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: #7a7690;
+  cursor: pointer;
+}
+
+.consent input {
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.error {
+  margin: 0;
+  color: #b91c1c;
+  font-size: 0.85rem;
+}
+
+.done {
+  margin: 0;
+  font-weight: 600;
+  color: var(--purplepink);
+}
+
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

@@ -1,0 +1,36 @@
+.linkRow {
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;            /* keeps them from touching on narrow screens */
+}
+
+.link {
+  text-decoration: underline;
+}
+
+.claimRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;            /* so the button drops under input on small screens */
+}
+
+.claimInput {
+  flex: 1 1 260px;
+  min-width: 220px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.claimButton {
+  border-radius: 9999px;
+  padding: 8px 14px;
+  background: #111;
+  color: #fff;
+  opacity: 1;
+}
+
+.claimButton:disabled {
+  opacity: 0.6;
+}

@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* 🎨 Brand Color Palette */
+:root {
+  /* Pastel brand colors */
+  --lavender: #f2ecf4;      /* main background */
+  --lightorange: #fee6d3;   /* soft accent */
+  --yellowgreen: #e9efd9;   /* gentle highlight */
+  --lightred: #fbc8cb;      /* primary button / hover accent */
+  --mediumred: #f7a9b0;     /* hover state */
+  --darkred: #f59aa3;       /* active state */
+  --purplepink: #784476;    /* main text / logo purple */
+  --turquoise: #c2e5d8;     /* secondary accent */
+  --lightpurple: #d4c1ef;   /* subtle borders / lines */
+
+  /* Derived variables */
+  --text-color: var(--purplepink);
+  --bg-color: var(--lavender);
+  --font-main: 'Poppins', sans-serif;
+}
+
+/* 🌸 Global Styles */
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* ✨ Buttons */
+button {
+  background-color: var(--lightred);
+  color: var(--purplepink);
+  border: none;
+  border-radius: 1.5rem;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+button:hover {
+  background-color: var(--mediumred);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+button:active {
+  background-color: var(--darkred);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08) inset;
+}
+
+/* 🧁 Typography */
+h1, h2, h3 {
+  color: var(--purplepink);
+  font-weight: 600;
+}
+
+p {
+  color: var(--purplepink);
+  line-height: 1.5;
+}
+
+/* Page layout variable for Avasquishi modules */
+:root {
+  --page-max: 1200px; /* Used in product pages and detail layouts */
+}

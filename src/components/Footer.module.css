@@ -1,0 +1,73 @@
+.footer {
+  background: var(--lightorange);
+  border-top: 1px solid var(--lightpurple);
+  padding: 2.5rem 1.25rem 2rem;
+  margin-top: 3rem;
+}
+
+.inner {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  text-align: center;
+}
+
+/* Primary info links row */
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.2rem 1.5rem;
+}
+
+.link {
+  color: var(--purplepink);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 3px 0;
+}
+
+.link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Secondary legal links row */
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.2rem 1.25rem;
+}
+
+.legalLink {
+  color: #7a7690;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.legalLink:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Copyright line */
+.copy {
+  color: #7a7690;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 2rem 1rem 1.75rem;
+  }
+
+  .links {
+    gap: 0.4rem 1.25rem;
+  }
+}
